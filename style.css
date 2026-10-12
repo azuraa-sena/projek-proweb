@@ -1,0 +1,181 @@
+/* Ganti 'background-foto.jpg' dengan gambar background kelas/teman Anda */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; /* Font mirip mesin tik seperti di gambar */
+    background-image: url('../background-foto.jpg'); /* MASUKKAN GAMBAR BACKGROUND DI SINI */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    backdrop-filter: blur(5px); /* Memberikan efek blur pada background */
+    background-color: rgba(0, 0, 0, 0.4); /* Efek gelap sedikit agar kartu menonjol */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 20px auto;
+}
+
+.card-title {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+.card-desc {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.play-btn {
+    background-color: #0d6efd; /* Biru seperti di gambar */
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 0 auto;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #0b5ed7;
+}
+
+/* Tampilan Pop-up Hasil (Biar lebih rapi dibanding langsung nulis di halaman) */
+#hasil-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+    z-index: 9999;
+    width: 300px;
+}
+
+#hasil-container.hidden {
+    display: none;
+}
+
+.close-btn {
+    margin-top: 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+}
+/* Menambahkan Class Hidden Global (Sangat Penting untuk efek sembunyi) */
+.hidden {
+    display: none !important;
+}
+
+/* Tampilan Layar Arena Pilihan Gambar */
+.arena-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.arena-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.pilihan-area {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Kotak untuk masing-masing gambar pilihan */
+.pilihan-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 120px;
+}
+
+/* Efek melayang saat mouse diarahkan ke gambar */
+.pilihan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: 2px solid #0d6efd;
+}
+
+.pilihan-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.pilihan-card p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+/* Tombol kembali ke menu utama */
+.kembali-btn {
+    margin-top: 40px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.kembali-btn:hover {
+    background-color: #5a6268;
+}

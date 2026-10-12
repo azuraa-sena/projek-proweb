@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suten Game</title>
+    
+    <!-- PERBAIKAN: Menghubungkan CSS yang berada di folder yang sama -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Area untuk menampilkan hasil suit -->
+    <div id="hasil-container" class="hidden">
+        <h2 id="hasil-teks"></h2>
+        <button onclick="tutupHasil()" class="close-btn">Tutup</button>
+    </div>
+
+    <div id="menu-utama" class="container">
+        <!-- KARTU 1: Suten Hewan -->
+        <div class="card">
+            <img src="img/gajah.png" alt="Suten Hewan" class="card-img">
+            
+            <h3 class="card-title">Suten Hewan</h3>
+            <p class="card-desc">Suten hewan adalah suit yang menggunakan gajah - manusia - semut, sebagai penentu kemenangan</p>
+          <button class="play-btn" onclick="bukaArena('arena-hewan')">Play</button>
+        </div>
+
+        <!-- KARTU 2: Suten Benda -->
+        <div class="card">
+            <img src="img/batu.png" alt="Suten Benda" class="card-img">
+            
+            <h3 class="card-title">Suten Benda</h3>
+            <p class="card-desc">Suten benda adalah suit yang menggunakan batu - gunting - kertas, sebagai penentu kemenangan</p>
+          <button class="play-btn" onclick="bukaArena('arena-benda')">Play</button>
+        </div>
+
+        <!-- KARTU 3: Suten Jari -->
+        <div class="card">
+            <img src="img/jari.png" alt="Suten Jari" class="card-img">
+            
+            <h3 class="card-title">Suten jari</h3>
+            <p class="card-desc">Suten jari adalah suit yang menggunakan jempol - telunjuk - kelingking, sebagai penentu kemenangan</p>
+            <button class="play-btn" onclick="bukaArena('arena-jari')">Play</button>
+        </div>
+
+    </div>
+<!-- ARENA SUTEN HEWAN -->
+    <div id="arena-hewan" class="arena-container hidden">
+        <h2 class="arena-title">Pilih Jagoanmu!</h2>
+        <div class="pilihan-area">
+            <div class="pilihan-card" onclick="mainHewan('gajah')">
+                <img src="img/gajah.png" alt="Gajah">
+                <p>Gajah</p>
+            </div>
+            <div class="pilihan-card" onclick="mainHewan('manusia')">
+                <img src="img/manusia.jpg" alt="Manusia">
+                <p>Manusia</p>
+            </div>
+            <div class="pilihan-card" onclick="mainHewan('semut')">
+                <img src="img/semut.jpg" alt="Semut">
+                <p>Semut</p>
+            </div>
+        </div>
+        <button class="kembali-btn" onclick="bukaArena('menu-utama')">Kembali ke Menu</button>
+    </div>
+
+    <!-- ARENA SUTEN BENDA -->
+    <div id="arena-benda" class="arena-container hidden">
+        <h2 class="arena-title">Pilih Jagoanmu!</h2>
+        <div class="pilihan-area">
+            <div class="pilihan-card" onclick="mainBenda('batu')">
+                <img src="img/batu.png" alt="Batu">
+                <p>Batu</p>
+            </div>
+            <div class="pilihan-card" onclick="mainBenda('gunting')">
+                <img src="img/gunting.jpg" alt="Gunting">
+                <p>Gunting</p>
+            </div>
+            <div class="pilihan-card" onclick="mainBenda('kertas')">
+                <img src="img/kertas.jpg" alt="Kertas">
+                <p>Kertas</p>
+            </div>
+        </div>
+        <button class="kembali-btn" onclick="bukaArena('menu-utama')">Kembali ke Menu</button>
+    </div>
+
+    <!-- ARENA SUTEN JARI -->
+    <div id="arena-jari" class="arena-container hidden">
+        <h2 class="arena-title">Pilih Jagoanmu!</h2>
+        <div class="pilihan-area">
+            <div class="pilihan-card" onclick="mainJari('jempol')">
+                <img src="img/jempol.jpg" alt="Jempol">
+                <p>Jempol</p>
+            </div>
+            <div class="pilihan-card" onclick="mainJari('telunjuk')">
+                <img src="img/telunjuk.jpg" alt="Telunjuk">
+                <p>Telunjuk</p>
+            </div>
+            <div class="pilihan-card" onclick="mainJari('kelingking')">
+                <img src="img/kelingking.jpg" alt="Kelingking">
+                <p>Kelingking</p>
+            </div>
+        </div>
+        <button class="kembali-btn" onclick="bukaArena('menu-utama')">Kembali ke Menu</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
